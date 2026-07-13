@@ -75,9 +75,9 @@ streamlit run app.py
 
 ## 🌐 Live Demo
 
-Streamlit App:
+**Streamlit App:**
 
-(Add your Streamlit Cloud URL here)
+https://student-math-score-predictor-577.streamlit.app/
 
 ---
 
