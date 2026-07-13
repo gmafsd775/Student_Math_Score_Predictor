@@ -151,97 +151,96 @@ new_student=pd.DataFrame({
 st.divider()
 
 if st.button(" Predict Math Score", use_container_width=True):
-    st.success("✅ Button is working!")
 
-#     # Arrange columns according to trained model
-#     new_student = new_student.reindex(
-#         columns=loaded_model.feature_names_in_
-#     )
+    # Arrange columns according to trained model
+    new_student = new_student.reindex(
+        columns=loaded_model.feature_names_in_
+    )
 
-#     # Predict Math Score
-#     prediction = loaded_model.predict(new_student)[0]
+    # Predict Math Score
+    prediction = loaded_model.predict(new_student)[0]
 
-#     # ==========================================
-#     # Grade System
-#     # ==========================================
+    # ==========================================
+    # Grade System
+    # ==========================================
 
-#     if prediction >= 90:
-#         grade = "A+"
-#         status = "Outstanding "
+    if prediction >= 90:
+        grade = "A+"
+        status = "Outstanding "
 
-#     elif prediction >= 80:
-#         grade = "A"
-#         status = "Excellent "
+    elif prediction >= 80:
+        grade = "A"
+        status = "Excellent "
 
-#     elif prediction >= 70:
-#         grade = "B"
-#         status = "Good "
+    elif prediction >= 70:
+        grade = "B"
+        status = "Good "
 
-#     elif prediction >= 60:
-#         grade = "C"
-#         status = "Average "
+    elif prediction >= 60:
+        grade = "C"
+        status = "Average "
 
-#     else:
-#         grade = "D"
-#         status = "Needs Improvement "
+    else:
+        grade = "D"
+        status = "Needs Improvement "
 
-#     # ==========================================
-#     # Result Dashboard
-#     # ==========================================
+    # ==========================================
+    # Result Dashboard
+    # ==========================================
 
-#     st.divider()
+    st.divider()
 
-#     st.subheader(" Prediction Dashboard")
-#     st.caption("Prediction generated using the trained Machine Learning model.")
+    st.subheader(" Prediction Dashboard")
+    st.caption("Prediction generated using the trained Machine Learning model.")
 
-#     st.markdown("## 🎯 Prediction Result")
+    st.markdown("## 🎯 Prediction Result")
 
-#     col1, col2, col3 = st.columns(3)
+    col1, col2, col3 = st.columns(3)
 
-#     with col1:
-#         st.metric(
-#             label=" Math Score",
-#             value=f"{prediction:.2f}"
-#         )
+    with col1:
+        st.metric(
+            label=" Math Score",
+            value=f"{prediction:.2f}"
+        )
 
-#     with col2:
-#         st.metric(
-#             label=" Grade",
-#             value=grade
-#         )
+    with col2:
+        st.metric(
+            label=" Grade",
+            value=grade
+        )
 
-#     with col3:
-#         st.metric(
-#             label=" Performance",
-#             value=status
-#         )
+    with col3:
+        st.metric(
+            label=" Performance",
+            value=status
+        )
 
-#     # ==========================================
-#     # Progress Bar
-#     # ==========================================
+    # ==========================================
+    # Progress Bar
+    # ==========================================
 
-#     st.progress(int(prediction))
+    st.progress(int(prediction))
 
-#     st.caption(f"Overall Estimated Performance: {prediction:.0f}%")
+    st.caption(f"Overall Estimated Performance: {prediction:.0f}%")
 
-#     # ==========================================
-#     # Performance Message
-#     # ==========================================
+    # ==========================================
+    # Performance Message
+    # ==========================================
 
-#     if prediction >= 90:
-#         st.success(" Outstanding! The student is expected to achieve an excellent Mathematics score.")
+    if prediction >= 90:
+        st.success(" Outstanding! The student is expected to achieve an excellent Mathematics score.")
 
-#     elif prediction >= 80:
-#         st.success(" Excellent! Strong academic performance predicted.")
+    elif prediction >= 80:
+        st.success(" Excellent! Strong academic performance predicted.")
 
-#     elif prediction >= 70:
-#         st.info(" Good! The predicted Mathematics score is above average.")
+    elif prediction >= 70:
+        st.info(" Good! The predicted Mathematics score is above average.")
 
-#     elif prediction >= 60:
-#         st.warning(" Average performance. There is room for improvement.")
+    elif prediction >= 60:
+        st.warning(" Average performance. There is room for improvement.")
 
-#     else:
-#         st.error(" Improvement recommended. Additional practice may help increase the Mathematics score.")
+    else:
+        st.error(" Improvement recommended. Additional practice may help increase the Mathematics score.")
 
 st.divider()
 
