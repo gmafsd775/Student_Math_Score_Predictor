@@ -41,8 +41,9 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-loaded_model = joblib.load("Student_Math_Score_prediction.pkl")
-st.write(type(loaded_model))
+#loaded_model = joblib.load("Student_Math_Score_prediction.pkl")
+loaded_model = None
+#st.write(type(loaded_model))
 
 with st.sidebar:
 
@@ -151,6 +152,8 @@ new_student=pd.DataFrame({
 st.divider()
 
 if st.button(" Predict Math Score", use_container_width=True):
+    st.info("Debug Mode")
+    st.stop()
 
     # Arrange columns according to trained model
     new_student = new_student.reindex(
