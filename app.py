@@ -41,14 +41,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-try:
-    loaded_model = joblib.load("Student_Math_Score_prediction.pkl")
-    st.success("✅ Model loaded successfully")
-    st.write(type(loaded_model))
-except Exception as e:
-    st.error("Model loading failed")
-    st.exception(e)
-    st.stop()
+loaded_model = joblib.load("Student_Math_Score_prediction.pkl")
+
 
 with st.sidebar:
 
