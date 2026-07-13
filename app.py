@@ -157,8 +157,19 @@ new_student=pd.DataFrame({
 st.divider()
 
 if st.button(" Predict Math Score", use_container_width=True):
-    st.info("Debug Mode")
-    st.stop()
+    st.write("Step 1")
+
+    new_student = new_student.reindex(
+        columns=loaded_model.feature_names_in_
+    )
+
+    st.write("Step 2")
+    st.write(new_student)
+
+    prediction = loaded_model.predict(new_student)[0]
+
+    st.write("Step 3")
+    st.write(prediction)
 
     # Arrange columns according to trained model
     new_student = new_student.reindex(
