@@ -42,6 +42,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 loaded_model = joblib.load("Student_Math_Score_prediction.pkl")
+st.write(type(loaded_model))
 
 with st.sidebar:
 
