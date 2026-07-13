@@ -157,19 +157,6 @@ new_student=pd.DataFrame({
 st.divider()
 
 if st.button(" Predict Math Score", use_container_width=True):
-    st.write("Step 1")
-
-    new_student = new_student.reindex(
-        columns=loaded_model.feature_names_in_
-    )
-
-    st.write("Step 2")
-    st.write(new_student)
-
-    prediction = loaded_model.predict(new_student)[0]
-
-    st.write("Step 3")
-    st.write(prediction)
 
     # Arrange columns according to trained model
     new_student = new_student.reindex(
@@ -179,29 +166,31 @@ if st.button(" Predict Math Score", use_container_width=True):
     # Predict Math Score
     prediction = loaded_model.predict(new_student)[0]
 
+
     # ==========================================
     # Grade System
     # ==========================================
 
     if prediction >= 90:
         grade = "A+"
-        status = "Outstanding "
+        status = "Outstanding"
 
     elif prediction >= 80:
         grade = "A"
-        status = "Excellent "
+        status = "Excellent"
 
     elif prediction >= 70:
         grade = "B"
-        status = "Good "
+        status = "Good"
 
     elif prediction >= 60:
         grade = "C"
-        status = "Average "
+        status = "Average"
 
     else:
         grade = "D"
-        status = "Needs Improvement "
+        status = "Needs Improvement"
+
 
     # ==========================================
     # Result Dashboard
@@ -209,28 +198,28 @@ if st.button(" Predict Math Score", use_container_width=True):
 
     st.divider()
 
-    st.subheader(" Prediction Dashboard")
-    st.caption("Prediction generated using the trained Machine Learning model.")
-
-    st.markdown("## 🎯 Prediction Result")
+    st.subheader("🎯 Prediction Dashboard")
+    st.caption(
+        "Prediction generated using the trained Machine Learning model."
+    )
 
     col1, col2, col3 = st.columns(3)
 
     with col1:
         st.metric(
-            label=" Math Score",
+            label="Math Score",
             value=f"{prediction:.2f}"
         )
 
     with col2:
         st.metric(
-            label=" Grade",
+            label="Grade",
             value=grade
         )
 
     with col3:
         st.metric(
-            label=" Performance",
+            label="Performance",
             value=status
         )
 
